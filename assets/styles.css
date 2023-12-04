@@ -1,6 +1,33 @@
 
+
+/* var used in order to homogenise teh branding colours for ease of use  */
+:root{
+    --cream: #f4f3e8;
+    --taupe: #e2d8c2;
+    --zest: #ebfc72;
+    --sky: #abbac0;
+    --black: #000;
+    
+}
+
+/* My universal selector  */
+*{
+    font-family: Roboto, helvetica, century gothic, dejavu sans, sans-serif;
+    background-color: #f4f3e8;
+    box-sizing: border-box;
+    padding: 0px;
+
+}
+
+/* nav uses flex box, with logo on the left (which brings up back to the top of teh doc) and other links to the right (which take us to their respective sections
+sticky nav keeps nav at teh top of teh page */
 nav {
-    display: flex;
+    display: block;
+    background-color: var(--sky); 
+    position: sticky;
+    top: 5px;
+    width: 100%;
+    
 }
 
 figure {
@@ -9,6 +36,11 @@ figure {
 
 
 .logo {
-    display: flex;
+    float: left;
+
+}
+
+#example01{
+    display: inline-flex;
 
 }
