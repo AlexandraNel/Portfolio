@@ -1,3 +1,14 @@
+
+nav {
+    display: flex;
+}
+
+figure {
+    display:flex;
+}
+
+
 .logo {
-    
+    display: flex;
+
 }
