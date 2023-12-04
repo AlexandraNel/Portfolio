@@ -1,46 +1,88 @@
-
-
-/* var used in order to homogenise teh branding colours for ease of use  */
+/* var used in order to homogenise the branding colours for ease of use  */
 :root{
     --cream: #f4f3e8;
     --taupe: #e2d8c2;
     --zest: #ebfc72;
     --sky: #abbac0;
     --black: #000;
-    
-}
+    }
 
-/* My universal selector  */
+/* My universal selector covers font family, main bg colour, and border box sizing  */
 *{
-    font-family: Roboto, helvetica, century gothic, dejavu sans, sans-serif;
-    background-color: #f4f3e8;
+    font-family: Roboto, helvetica, century-gothic, dejavu-sans, sans-serif;
     box-sizing: border-box;
     padding: 0px;
+    margin: 0px;
 
 }
 
+body{
+    background-color: var(--cream);
+}
 /* nav uses flex box, with logo on the left (which brings up back to the top of teh doc) and other links to the right (which take us to their respective sections
 sticky nav keeps nav at teh top of teh page */
 nav {
-    display: block;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
     background-color: var(--sky); 
-    position: sticky;
-    top: 5px;
     width: 100%;
+    padding: 20px;
+    position: sticky;
+    top: 20px;
+     
+}
+
+nav ul {
+    display: flex;
+    list-style-type:none;
+    font-family: yeseva-one, righteous, serif;
+   
+    
+}
+nav ul li{
+    margin-left: 25px;
+    margin-right: 25px;
     
 }
 
+nav img {
+    height: 75px;
+}
+h1 {
+
+}
+
+article {
+    width: 40%;
+}
+
 figure {
-    display:flex;
+    width: 25%;
+}
+.about {
+    padding: 50px;
+    display: flex;
+    flex-wrap:wrap;
+    }
+
+.image-gallery{
+    display: flex;
+    flex-wrap:wrap;
+    justify-content: center;
+    align-items: center;
+}
+
+.image-gallery li{
+    display: flex;
+    flex-wrap:wrap;
+    justify-content: center;
+    align-items: center;
 }
 
 
-.logo {
-    float: left;
-
-}
-
-#example01{
-    display: inline-flex;
-
+@media screen and (max-width:600px) {
+    nav ul {
+        display:none;
+    }
 }
