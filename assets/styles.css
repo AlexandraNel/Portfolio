@@ -1,13 +1,18 @@
 /* var used in order to homogenise the branding colours for ease of use  */
   @import url('https://fonts.googleapis.com/css2?family=Yeseva+One&display=swap');
 
+  /* These are the brand colours used throughout the doc. us var to colour in order to match  */
 :root{
     --cream: #f4f3e8;
     --taupe: #e2d8c2;
     --zest: #ebfc72;
     --sky: #abbac0;
     --black: #000;
-    }
+    --ZC-50-gradient: linear-gradient(to bottom right,#f4f3e8 50% ,#ebfc72, #f4f3e8);
+    --CZT-gradient: linear-gradient(to top, #e2d8c2, #ebfc72);
+    } 
+    /* gradient is linear with 3 colours, teh first colour goes to a hard 50% of teh page 
+    (in the direction of top left to bottom right) then the gradient between the last 2 colours begins */
 
 /* My universal selector covers font family, main bg colour, and border box sizing  */
 *{
@@ -15,11 +20,12 @@
     box-sizing: border-box;
     padding: 0px;
     margin: 0px;
-
-}
+   }
 
 body{
     background-color: var(--cream);
+    width: 100%;
+       
 }
 /* nav uses flex box, with logo on the left (which brings up back to the top of teh doc) and other links to the right (which take us to their respective sections
 sticky nav keeps nav at teh top of teh page */
@@ -30,10 +36,8 @@ nav {
     background-color: var(--sky); 
     width: 100%;
     padding: 20px;
-    position: sticky;
-    top: 20px;
-     
-}
+    /* position: fixed;  nav will always stay at the top of the doc */
+   }
 
 nav img {
     height: 75px;
@@ -61,30 +65,43 @@ h1 {
     font-family: 'Yeseva One', Helvetica, serif; 
     font-weight: bold;  
     font-size: 30px; 
-    color: var(--sky);
-    padding: 5px;
+    color: var(--black);
+    padding: 25px;
+    text-align: center;
     
 }
 
 article {
     width: 50%;
+
 }
 
-figure img {
-    width: 50%;
-    border-radius: 50%;
-    
-}
 .about {
+    width: 100%;
     padding: 50px;
+    padding-top: 150px; /* prevents fixed header from covering content */
     display: flex;
     flex-wrap:wrap;
+    justify-content: space-around;
+    align-items: center;
+    background: var(--ZC-50-gradient);
+        }
+
+ .about img {
+    border-radius: 50%;
+    width: 40%;
+    height:40%;
+    box-shadow: 0 0 50px 0px var(--zest);   
+    /* box shadow used for glow fx, in order: x offset, y offset, blur size, spread size, color */
+        
     }
 
-.container {
+.portfolio {
     padding: 50px;
     display: flex;
     flex-wrap:wrap;
+    flex-direction: column;
+    background: var(--CZT-gradient);
        }
 
 .image-gallery{
@@ -99,8 +116,44 @@ figure img {
     width: 100px;
 }
 
-@media screen and (max-width:600px) {
-    nav ul {
-        display:none;
-    }
+.contact{
+    background-color: var(--taupe) ;
 }
+
+#item01{
+    width: 100%;
+    
+
+
+}
+
+@media screen and (max-width:500px) { /* snaps to new layout on mobile/tablet */
+    
+    
+    nav {    
+        justify-content: center; /* image pops to center on tablet/mobile */
+        }
+
+    nav ul {
+        display:none; /* nav drops off on tablet/mobile */
+    }
+
+    article {
+        width: 100%; /* article centres on tablet/mobile */
+        padding: 0%;
+        }
+
+    .about {
+        flex-direction: column-reverse;      /* profile photo reorganises to top on mobile, everythign center */
+        align-items: space-around;
+        justify-content: center;
+        width: 100%;
+                       }
+
+     .about img {   /* profile photo takes up 100% on mobile */
+       width: 100%;
+       height:100%;
+        }
+
+     
+    }

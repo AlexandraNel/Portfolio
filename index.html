@@ -6,7 +6,7 @@
 <head>
 
    <meta charset="UTF-8">
-   <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- viewport sizing 1.0-->
+   <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- viewport sizing 1.0 so media query works-->
    <title>Alexa Portfolio</title> <!-- Page title in tab-->
    <link rel="icon" type="image/png" href="./assets/Brand-Tiger.png"/>  <!-- Added a little favicon for the tab-->
    <link rel="stylesheet" href="./assets/reset.css">  <!-- resrt css added from template-->
@@ -17,7 +17,7 @@
 <body>
 
 <header>
-       <!-- Navbar with logo inside header-->
+       <!-- Navbar with logo inside header, logo links back to just under the header-->
    <nav>
      <a href=#home> <img src="./assets/Tiger-Alexa.png" alt="Website Logo Isometric Tiger"></a> 
      
@@ -32,43 +32,42 @@
    </nav>
 
 </header>
-   <a id="home">
-      
-   <a id="about">
-   <section class="about">
-            
+   <a id="home">    <!-- navbar logo links here -->
+    
+   <section class="about">   <!-- first section is a flexbox class -->
+      <a id="about"> </a>     <!-- about button links here --> 
+         
+      <!-- article uses p and br in order to give basic formatting to the text with spaces between the paragprahs and important lines -->
       <article>
-         <h1>  About </h1>
+         <h1>  About </h1> 
        
-         <p> 
-         I am a 2D Motion Graphics Designer and Full Stack Dev student. <br>
+         <p>  I am a 2D Motion Graphics Designer and Full Stack Dev student. </p><br>
          
-         With experience spanning advertising, sports, and artistic ventures; I partner with brands to realise their animated video and illustration content. <br>
+        <p> With experience spanning advertising, sports, and artistic ventures; I partner with brands to realise their animated video and illustration content. </p><br>
          
-         But there's more to it than just pixels and keyframes. I'm an explorer at heart, fascinated by the digital frontier and its wonders. <br>
-         
-         Big agencies, ambitious startups, local artists, and brands of all sizes have trusted me to shape their narratives with engaging video content. 
+        <p> Big agencies, ambitious startups, local artists, and brands of all sizes have trusted me to shape their narratives with engaging video content. <br>
          My continued pursuit of learning and development has led me to contribute two years to the Industry Advisory Committee for the Diploma programs at the Royal Melbourne Institute of Technology. 
-         I've also had the privilege to share my industry insights with the next generation, serving as an external industry contributor for the diploma students at RMIT. <br>
+         I've also had the privilege to share my industry insights with the next generation, serving as an external industry contributor for the diploma students at RMIT. </p><br>
          
-         Be it a corporate narrative needing clarity, an eLearning module seeking that animated spark, an advert that needs to jump off the screen, or an artistic vision longing to leap into motion, I'm your go-to. <br>
+         <p>Be it a corporate narrative needing clarity, an eLearning module seeking that animated spark, an advert that needs to jump off the screen, or an artistic vision longing to leap into motion, I'm your go-to. <br>
          
-         From concept to creation, I'm here to help bring your content to life. Reach out today.
+         From concept to creation, I'm here to help bring your content to life. Reach out today.</p>
          </p>
    </article>
 
-     <figure><img src="./assets/Alexa-376.jpg" alt="a head shot of Alexa"> </figure> 
+     <!-- image also lives in flexbox as flexbox item 02-->
+     <img src="./assets/Alexa-376.jpg" alt="a head shot of Alexa"> 
      
-
    </section>
   
-   <section class="container">
-      <a id="portfolio">
+  
+   <section class="portfolio">   <!-- new section begins with new css class, this is a flex ocntainer -->
+      <a id="portfolio"></a>   <!-- portfolio button links here -->
 
       <h1> Portfolio </h1>
      
-      <ul class=" image-gallery">
-         <li> <img src="./assets/Horiseon-Social.jpg" alt="image of Horiseon Social office workers"/> </li>
+      <ul class=" image-gallery"> <!-- list items used in gallery to show pictures, class of image gallery, this is also a flex container  -->
+         <li id="item01"> <img src="./assets/Horiseon-Social.jpg" alt="image of Horiseon Social office workers"/> </li>
          <li> <img src="./assets/Horiseon-Social.jpg" alt="image of Horiseon Social office workers"/> </li>
          <li> <img src="./assets/Horiseon-Social.jpg" alt="image of Horiseon Social office workers"/> </li>
          <li> <img src="./assets/Horiseon-Social.jpg" alt="image of Horiseon Social office workers"/> </li>
@@ -77,8 +76,9 @@
       </ul>
    </section>
 
-   <section>
-      <a id="contact">
+   <a id="contact"> <!-- contact button links here -->
+   <section class="contact"> <!-- new section with new class -->
+      
       <h1> Contact </h1>
 
    </section>
