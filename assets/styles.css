@@ -22,13 +22,24 @@
     margin: 0px;
    }
 
+/* generic brand bq colour set, width at 100% for all contained content. hyphens used to stop text 
+from breaking when resizing */
 body{
     background-color: var(--cream);
     width: 100%;
-       
+    hyphens: none;
+     
 }
-/* nav uses flex box, with logo on the left (which brings up back to the top of teh doc) and other links to the right (which take us to their respective sections
-sticky nav keeps nav at teh top of teh page */
+
+/* setting generic img width at 100% at top of doc (overwrideen by more speciific classes/ids this corrects images from exceeding flex bounds*/
+img {
+    width: 100%;
+    border-radius: 10%;
+}       
+
+/* nav uses flex box, with logo at start(left) and links back to top of the page. Other nav links to the end (right) which take us to their respective sections
+fixed nav keeps nav at the top of the page when scrolling
+have given a z-index to stop hover effect from overlapping nav bar- nav bar stays on top of all content */
 nav {
     display: flex;
     justify-content: space-between;
@@ -37,11 +48,14 @@ nav {
     width: 100%;
     padding: 20px;
     position: fixed;
+    z-index: 1;
     /* position: fixed;  nav will always stay at the top of the doc */
    }
 
+   /* defines nav logo height */
 nav img {
     height: 75px;
+    width: auto;
 }
 
 nav ul {
@@ -49,24 +63,29 @@ nav ul {
     list-style-type:none;    
 }
 
+/* percentages used here made design responsive and stopped nav from dropping out of flow */
 nav ul li{
     margin-left: 5%; 
-    margin-right: 5%;
-   /* percentages used here made design responsive and stopped nav from dropping out of flow     */
-    
+    margin-right: 5%;   
 }
 
+/* anchor elements within nav list assigned font styles, colours and size, underline of link removed, letter spacing increased*/
 nav ul li a{
-    font-family: 'Yeseva One', Helvetica, serif;
-    font-weight: bold;
-    font-size: 20px;
+    font-family: 'Yeseva One', Helvetica, serif; 
+    font-weight: 500;
+    font-size: 30px;
+    text-decoration: none;
+    letter-spacing: 2px;
     color: var(--zest);
     }
 
+    /* pseudo element on nav list items to adjust colour and glow (shadow) when hovering*/
 nav ul li :hover {
-    color: var(--taupe);
+    color: var(--black);
+    text-shadow: 0px 0px 5px var(--cream), 0px 0px 10px var(--zest), 0px 0px 50px var(--zest); 
 }
 
+/* h1 elements assigned font styles, colours and padding, all centred*/
 h1 {
     font-family: 'Yeseva One', Helvetica, serif; 
     font-weight: bold;  
@@ -76,6 +95,7 @@ h1 {
     text-align: center;
     }
 
+/* article element to take up half of the flex container*/
 article {
     width: 50%;
 }
@@ -86,55 +106,79 @@ footer{
     flex-direction: column-reverse; /* decided that image is better above copy */
     background-color: var(--sky);
     align-items: center;
-    padding-bottom: 5%; /* maintains responsive layout with percentage */
-    
+    padding: 5%; /* maintains responsive layout with percentage */
 }
 
+/* image width/height needs to be stated within flex box in order to contain it- otherwise it is HUGE */
 footer img{
     width: 25%;
-    height: auto;
+    height: 25%
 }
 
+/* padding large prevents fixed header from covering content, have also added wrap reverse so image seamlessly 
+wraps when moving into mobile/tablet mode as per media query */
 .about {
-    width: 100%;
     padding: 50px;
-    padding-top: 150px; /* prevents fixed header from covering content */
+    padding-top: 150px; 
     display: flex;
-    flex-wrap:wrap;
+    flex-wrap:wrap-reverse;
     justify-content: space-around;
     align-items: center;
     background: var(--ZC-50-gradient);
         }
 
+ /* box shadow used for glow fx, in order: x offset, y offset, blur size, spread size, color.
+ transition effects makes responsive resizing look nicer */
  .about img {
     border-radius: 50%;
     width: 40%;
     height:40%;
-    box-shadow: 0 0 50px 0px var(--zest);   
-    /* box shadow used for glow fx, in order: x offset, y offset, blur size, spread size, color */
-        
+    box-shadow: 0 0 50px 0px var(--zest); 
+    transition: .5s ease;       
     }
 
+/* flex container/row/wrap/centred with gradient bg */
 .portfolio {
     padding: 50px;
     display: flex;
     flex-wrap:wrap;
     justify-content: center;
     background: var(--CZT-gradient);
-       }
+   
+}
 
-.image-gallery{
+/* hover over linked portfolio pieces transition makes hover effect look nicer*/
+ .portfolio li :hover {
+    filter: brightness(1.1);
+    border-radius: 0;
+    transition: .5s ease; 
+  }
+   
+ 
+/* flex container lives inside portfolio/row/wrap/centred have removed bullet points of contained list item, this is for MAIN portfolio image */
+.image-gallery-01{
     display: flex;
     flex-wrap: wrap;
     list-style-type:none; 
     padding: 20px;
     justify-content: center;
     align-items: center;
-    }
+}
 
-     /* percentage width makes images fit in image gallery flex box responsively, this allows all images to live within flex box */
-.image-gallery img{
-    width: 100%; 
+/* flex container lives inside portfolio/row/wrap/centred seperate to 01 gallery, have removed bullet points of contained lists, this creates a new flex box for the sub-images */
+.image-gallery-02{
+    display: flex;
+    flex-wrap: wrap;
+    list-style-type:none; 
+    padding: 20px;
+    justify-content: space-between; 
+    align-content: space-between;
+}
+
+/* styling flex box items for sub images within flex container */
+.image-gallery-02 li{
+    width: 50%;
+    padding:3px;
 }
 
 .contact {
@@ -142,29 +186,35 @@ footer img{
 }
 
 
-@media screen and (max-width:512px) { /* snaps to new layout on mobile/tablet */
+/* media query supports responsive design at mobile and tablet break point
+snaps to new dimensions. using tablet sizing for btoh tablet and mobile verticle */
+@media screen and (max-width:767px) { 
+
     
-    
+ /* image pops to center on tablet/mobile */
     nav {    
-        justify-content: center; /* image pops to center on tablet/mobile */
+        justify-content: center;
         }
 
+ /* nav drops off on tablet/mobile */
     nav ul {
-        display:none; /* nav drops off on tablet/mobile */
+        display:none; 
     }
-
+ /* article centres on tablet/mobile */
     article {
-        width: 100%; /* article centres on tablet/mobile */
+        width: 100%;
         padding: 0%;
         }
 
+/* profile photo reorganises to top on mobile, everything center */
     .about {
         padding: 50px, 0px, 0px, 0px;
-        flex-direction: column-reverse;      /* profile photo reorganises to top on mobile, everythign center */
+        flex-direction: column-reverse;     
         justify-content: center;
         width: 100%;
     }
-     
+
+/* image adjusted to suit mobile design */
     .about img {
     border-radius: 50%;
     width:100%;
@@ -172,7 +222,7 @@ footer img{
         
     }
 
-            
+ /* flex box adjusted to suit mobile design and prevent breaking of entire layout*/           
     .portfolio {
         padding: 10px;
         justify-content: center;
