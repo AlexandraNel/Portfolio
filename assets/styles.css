@@ -63,6 +63,10 @@ nav ul li a{
     color: var(--zest);
     }
 
+nav ul li :hover {
+    color: var(--taupe);
+}
+
 h1 {
     font-family: 'Yeseva One', Helvetica, serif; 
     font-weight: bold;  
@@ -74,8 +78,8 @@ h1 {
 
 article {
     width: 50%;
-
 }
+
 
 footer{
     display: flex;
@@ -128,20 +132,14 @@ footer img{
     align-items: center;
     }
 
+     /* percentage width makes images fit in image gallery flex box responsively, this allows all images to live within flex box */
 .image-gallery img{
     width: 100%; 
-    /* percentage width makes images fit in image gallery responsively, they arent massive */
-}
-
-.image-gallery li:first-child{
-    flex-grow: 2;
-    width: 25%;
 }
 
 .contact {
     background-color: var(--taupe) ;
 }
-
 
 
 @media screen and (max-width:512px) { /* snaps to new layout on mobile/tablet */
