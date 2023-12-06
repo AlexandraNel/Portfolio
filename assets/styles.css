@@ -10,6 +10,7 @@
     --black: #000;
     --ZC-50-gradient: linear-gradient(to bottom right,#f4f3e8 50% ,#ebfc72, #f4f3e8);
     --CZT-gradient: linear-gradient(#f4f3e8, #ebfc72);
+    --ZT-gradient: linear-gradient(to bottom left, #e2d8c2 50%, #ebfc72 , #f4f3e8);
     } 
     /* gradient is linear with 3 colours, teh first colour goes to a hard 50% of teh page 
     (in the direction of top left to bottom right) then the gradient between the last 2 colours begins */
@@ -35,7 +36,7 @@ body{
 img {
     width: 100%;
     border-radius: 10%;
-}       
+    }       
 
 /* nav uses flex box, with logo at start(left) and links back to top of the page. Other nav links to the end (right) which take us to their respective sections
 fixed nav keeps nav at the top of the page when scrolling
@@ -93,26 +94,52 @@ h1 {
     color: var(--black);
     padding: 25px;
     text-align: center;
-    }
+ }
 
+    /* emphasise text NAME */
+ span{
+    font-weight: 900;
+        
+ }
 /* article element to take up half of the flex container*/
 article {
     width: 50%;
+    text-align: center; 
 }
 
-
+/* footer, flex box and styled */
 footer{
     display: flex;
-    flex-direction: column-reverse; /* decided that image is better above copy */
+    flex-wrap: wrap;
     background-color: var(--sky);
     align-items: center;
     padding: 5%; /* maintains responsive layout with percentage */
+    justify-content: space-between;
+    
 }
 
 /* image width/height needs to be stated within flex box in order to contain it- otherwise it is HUGE */
 footer img{
-    width: 25%;
-    height: 25%
+    width: 10%;
+    }
+
+/* styling contact info, removed bullet points, centred */
+footer li {
+    font-size: 20px ;
+    text-align:center;
+    list-style-type:none; 
+    width: auto ;  
+}
+
+/* anchor styled to remove underline and add a different colour to link */
+footer a {
+    text-decoration: none;
+    color: var(--taupe);
+}
+
+/* hover shifts the colour to emphasise link*/
+footer a :hover{
+    color: var(--black);
 }
 
 /* padding large prevents fixed header from covering content, have also added wrap reverse so image seamlessly 
@@ -134,7 +161,8 @@ wraps when moving into mobile/tablet mode as per media query */
     width: 40%;
     height:40%;
     box-shadow: 0 0 50px 0px var(--zest); 
-    transition: .5s ease;       
+    transition: .5s ease;
+         
     }
 
 /* flex container/row/wrap/centred with gradient bg */
@@ -181,11 +209,31 @@ wraps when moving into mobile/tablet mode as per media query */
     padding:3px;
 }
 
+/* contact section bg*/
 .contact {
-    background-color: var(--taupe) ;
+    background: var(--ZT-gradient);
+    padding-bottom: 25px;  
 }
 
+.contact li{
+    font-size: 20px ;
+    text-align:center;
+    list-style-type:none; 
+    width: auto ; 
+}
 
+/* contact links formatted eith an id so they dont look so bad
+tried to use contact class a but it was slow to load so added id */
+#social-link a {
+    color: var(--black); 
+    text-decoration: underline;
+    font-weight: 900;
+}
+/* change of colour wen hovering over link */
+#social-link a :hover{
+    font-weight: 900;
+    color: var(--sky); 
+}
 /* media query supports responsive design at mobile and tablet break point
 snaps to new dimensions. using tablet sizing for btoh tablet and mobile verticle */
 @media screen and (max-width:767px) { 
@@ -205,6 +253,21 @@ snaps to new dimensions. using tablet sizing for btoh tablet and mobile verticle
         width: 100%;
         padding: 0%;
         }
+
+/* footer adjusts for tablet/mobile to clear space */
+    footer{
+        width: 100;
+        justify-content: center;
+    }
+    footer ul{
+        display: none;
+    }
+
+    footer img{
+        width: 20%;
+        }
+    
+    
 
 /* profile photo reorganises to top on mobile, everything center */
     .about {

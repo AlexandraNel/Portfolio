@@ -16,12 +16,14 @@
 
 <body>
 
+<!-- Navbar with logo inside header, logo image links/scrolls back to just under the header-->
 <header>
-       <!-- Navbar with logo inside header, logo links back to just under the header-->
+
+
    <nav>
      <a href=#home> <img src="./assets/Tiger-Alexa.png" alt="Website Logo Isometric Tiger"></a> 
      
-      <!-- Navbar links using anchor tags and id to link to that area-->
+      <!-- Navbar links using anchor tags and id to link to that area and scrolls to it on page-->
       <ul>
          <li> <a href= #about> About </a> </li>
          <li> <a href= #portfolio> Portfolio </a> </li>
@@ -32,16 +34,23 @@
    </nav>
 
 </header>
-   <a id="home">    <!-- navbar logo links here -->
-    
-   <section class="about">   <!-- first section is a flexbox class -->
-      <a id="about"> </a>     <!-- about button links here --> 
+
+ <!-- navbar logo links here, closed anchor tags as they can interfere with other elements -->
+   <a id="home"></a>   
+
+<!-- first section has class 'about'-->
+   <section class="about">   
+
+<!-- navbar 'about' links here, closed anchor tags as they can interfere with other elements -->
+      <a id="about"> </a>     
          
-      <!-- article uses p and br in order to give basic formatting to the text with spaces between the paragprahs and important lines -->
+<!-- article uses p and br in order to give basic formatting to the text with spaces between the paragraphs and important lines -->
       <article>
+
+<!-- Section Header -->   
          <h1>  About </h1> 
        
-         <p>  I am a 2D Motion Graphics Designer and Full Stack Dev student. </p><br>
+         <p>  I'm <span>Alexa Nel</span>, a 2D Motion Graphics Designer and Full Stack Dev student. </p><br>
          
         <p> With experience spanning advertising, sports, and artistic ventures; I partner with brands to realise their animated video and illustration content. </p><br>
          
@@ -49,33 +58,39 @@
          My continued pursuit of learning and development has led me to contribute two years to the Industry Advisory Committee for the Diploma programs at the Royal Melbourne Institute of Technology. 
          I've also had the privilege to share my industry insights with the next generation, serving as an external industry contributor for the diploma students at RMIT. </p><br>
          
-         <p>Be it a corporate narrative needing clarity, an eLearning module seeking that animated spark, an advert that needs to jump off the screen, or an artistic vision longing to leap into motion, I'm your go-to. <br>
+         <p>Be it a corporate narrative needing clarity, an eLearning module seeking that animated spark, an advert that needs to jump off the screen, or an artistic vision longing to leap into motion, I'm your go-to.</p> <br>
          
-         From concept to creation, I'm here to help bring your content to life. Reach out today.</p>
-         </p>
-   </article>
+         <p>From concept to creation, I'm here to help bring your content to life. Reach out today.</p>
+         
+       </article>
 
-     <!-- image also lives in flexbox as flexbox item 02-->
+<!-- image headhsot with alt text -->
      <img src="./assets/Alexa-376.jpg" alt="a head shot of Alexa"> 
      
    </section>
   
-  
-   <section class="portfolio">   <!-- new section begins with new css class, this is a flex ocntainer -->
-      <a id="portfolio"></a>   <!-- portfolio button links here -->
+<!-- new section begins with new css class portfolio-->
 
+   <section class="portfolio">
+
+<!-- navbar 'portfolio' links here, closed anchor tags as they can interfere with other elements -->
+      <a id="portfolio"></a>  
+
+<!-- Section Header -->   
       <h1> Portfolio </h1>
 
-       <!-- Have created a seperate UL for my main portfolio piece, have added the external link to an anchor tag around the image, and within the list item -->
-       <!-- Added the same class as teh other links to allow it to occupy the same fle box and adopt the width parameters from class img CSS -->
+ <!-- Have created a seperate UL for main portfolio piece, have added the external link to an anchor tag around the image, and within the list item -->
+ <!-- Classes within portfolio ul similarly named for ease of styling -->
       <ul class=" image-gallery-01"> 
          <li> <a href="https://alexandranel.github.io/Challenge01-Horiseon-Social-Solution-Services/"><img src="./assets/Horiseon-Social.jpg" alt="image of Horiseon Social office workers"/> </a>
          </li>
       </ul> 
-     
+
+<!-- Have created a seperate UL remaining pieces, have added the external link to an anchor tag around the image, and within the list item -->
+<!-- Classes within portfolio ul similarly named for ease of styling -->   
      
       <ul class=" image-gallery-02"> 
-         <!-- list items used in gallery to show pictures, class of image gallery, this is also a flex container  -->
+     
          <li> <a href="https://youtu.be/1ujUhSoBNmQ?si=dIe5zlqHsdNCBH-C"><img src="./assets/01 end.png" alt="Showreel cover image"/></a></li>
          <li> <a href="https://www.alexandranel.com/illustration"><img src="./assets/illustration.png" alt="takeaway food and coffee illustrated in an organic frame of outlined plants"/></a></li>
          <li> <a href="https://www.thenode.is/artist3?name=Alexandra-Nel?id=68"><img src="./assets/the node.png" alt="TheNode Directory Logo"/></a> </li>
@@ -85,27 +100,43 @@
 
         </section>
 
-   <a id="contact"> <!-- contact button links here -->
-   <section class="contact"> <!-- new section with new class -->
-      
+<!-- new section begins with new css class contact-->
+   <section class="contact"> 
+
+<!-- navbar 'portfolio' links here, closed anchor tags as they can interfere with other elements -->
+   <a id="contact"> </a>
+
+<!-- Section Header -->      
       <h1> Contact </h1>
+
+ <!-- UL contains contact details, span highlights important info. Links for social media are id tagged -->
       <ul>
-         <li> email: info@alexandranel.com</li>
-         <li>phone: 0451 085 483</li>
-         <li><a href="https://www.instagram.com/alexa_n_motion/">instagram: @alexa_n_motion</a></li>
+         <li> email: <span>info@alexandranel.com </span></li>
+         <li>phone: <span> 0451 085 483 </span></li>
+         <li id="social-link"> instagram: <a href="https://www.instagram.com/alexa_n_motion/"><span>@alexa_n_motion</span></a></li>
+         <li id="social-link"> linkedIn: <a href="https://www.linkedin.com/"><span>@Alexa Nel</span></a></li>
       </ul>
 
    </section>
 
-   <section>
-      <h1> Resume </h1>
-      <img src="./assets/Resume Nov 24.pdf" alt="Resume of Alexa"/>
-   </section>
 </body>
 
+ <!-- Footer element ties webiste together with nav, similar styling and logo  -->
 <footer>
-   <h2>Alexandra Nel</h2>
-   <h3>2023</h3>
+
+<!-- UL used here as similar styling used to above, can be added to with more info also. span highlights info --> 
+  <ul>
+      <li><span>info@alexandranel.com </span></li>
+  </ul>
+
+<!-- Logo used again--> 
    <img src="./assets/Brand-Tiger.png">
+
+<!-- UL used here as similar styling used to above, completes the info for when the site was made and who by--> 
+   <ul>
+      <li> Alexandra Nel</li>
+      <li><span> 2023 </span></li>
+   </ul>
+   
 </footer>
 </html>
