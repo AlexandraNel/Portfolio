@@ -28,7 +28,7 @@ The following animation shows the web application's appearance and functionality
 
 Website has been deployed and is accessible by clicking this link:
 
-[Portfolio Website](./assets/websiteview.gif)
+[Portfolio Website](https://github.com/AlexandraNel/Portfolio-Alexandra-Nel/blob/main/assets/websiteview.gif?raw=true)
 
 Full repository can be accessed here:
 
