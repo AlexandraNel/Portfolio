@@ -177,7 +177,7 @@ wraps when moving into mobile/tablet mode as per media query */
 
 /* hover over linked portfolio pieces transition makes hover effect look nicer*/
  .portfolio li :hover {
-    filter: brightness(1.1);
+    filter: brightness(1.2);
     border-radius: 0;
     transition: .5s ease; 
   }
