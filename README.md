@@ -22,7 +22,7 @@ This application gave me time to explore, indepth, many capabilities of HTML and
 
 ## Visuals
 The following animation shows the web application's appearance and functionality:
-![Website Preview]()
+![Website view](./assets/websiteview.gif)
 
 ## Installation
 
